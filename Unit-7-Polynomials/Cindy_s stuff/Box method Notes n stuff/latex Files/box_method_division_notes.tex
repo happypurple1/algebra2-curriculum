@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\begin{document}
+
+% --- HEADER ---
+\begin{center}
+    \Large\textbf{Polynomial Division: The Box Method}
+\end{center}
+\vspace{0.1cm}
+\textbf{Name:} \underline{\hspace{2.2in}} \textbf{Date:} \underline{\hspace{0.8in}} \textbf{Period:} \underline{\hspace{0.4in}}
+
+\vspace{0.15cm}
+
+% --- CONNECTION BOX ---
+\begin{tcolorbox}[colback=gray!15, colframe=black, boxrule=0.5pt, arc=3pt, left=4pt, right=4pt, top=3pt, bottom=3pt]
+\textbf{The Connection:} Division is the \textbf{inverse} of multiplication!
+
+\begin{center}
+\begin{tabular}{c|c}
+\textbf{Multiplication (Forward)} & \textbf{Division (Backward)} \\
+\hline
+Fill in the box $\rightarrow$ Add diagonals $\rightarrow$ Product & Know the product $\rightarrow$ Work backwards $\rightarrow$ Find missing factor
+\end{tabular}
+\end{center}
+\vspace{-0.1cm}
+In division: \textbf{Dividend} $\div$ \textbf{Divisor} = \textbf{Quotient}. The divisor goes on the \textbf{left}, quotient goes on \textbf{top}.
+\end{tcolorbox}
+
+\vspace{0.15cm}
+
+% --- EXAMPLE 1 ---
+\textbf{Example 1:} $(x^3 + 5x^2 + 8x + 4) \div (x + 1)$
+
+\vspace{0.1cm}
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Step 1:} Set up the box. Divisor on left.
+
+\textbf{Step 2:} First term: $x^3 \div x = x^2$ (top)
+
+\textbf{Step 3:} Fill column: $x^2 \cdot 1 = x^2$
+
+\textbf{Step 4:} Next: $(5x^2 - x^2) \div x = 4x$
+
+\textbf{Step 5:} Continue until complete.
+
+\textbf{Step 6:} Check---does it rebuild the dividend?
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c||c|c|c|}
+\hline
+$\times$ & $x^2$ & $4x$ & $4$ \\
+\hline\hline
+$x$ & $x^3$ & $4x^2$ & $4x$ \\
+\hline
+$+1$ & $x^2$ & $4x$ & $4$ \\
+\hline
+\end{tabular}
+
+\vspace{0.2cm}
+Add diagonals: $x^3 + 5x^2 + 8x + 4$ \checkmark
+\end{minipage}
+
+\vspace{0.1cm}
+\textbf{Quotient:} $\boxed{x^2 + 4x + 4}$ \hspace{0.3in} \textbf{Remainder:} $\boxed{0}$
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+% --- EXAMPLE 2 ---
+\textbf{Example 2:} $(2x^4 + 3x^2 - 10) \div (x + 2)$ \hspace{0.3in} $\leftarrow$ \textit{Missing $x^3$ and $x$ terms!}
+
+\vspace{0.1cm}
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Key step:} Rewrite with placeholders:
+
+$(2x^4 + \mathbf{0x^3} + 3x^2 + \mathbf{0x} - 10) \div (x + 2)$
+
+\vspace{0.1cm}
+\textbf{Step 1:} $2x^4 \div x = 2x^3$
+
+\textbf{Step 2:} $2x^3 \cdot 2 = 4x^3$; need $0x^3$, so next: $(0 - 4x^3) \div x = -4x^2$
+
+\textbf{Step 3:} Continue pattern...
+
+\textbf{Step 4:} Last cell doesn't match? That's the \textbf{remainder}!
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c||c|c|c|c|}
+\hline
+$\times$ & $2x^3$ & $-4x^2$ & $11x$ & $-22$ \\
+\hline\hline
+$x$ & $2x^4$ & $-4x^3$ & $11x^2$ & $-22x$ \\
+\hline
+$+2$ & $4x^3$ & $-8x^2$ & $22x$ & $-44$ \\
+\hline
+\end{tabular}
+
+\vspace{0.15cm}
+{\small Diagonals: $2x^4 + 0x^3 + 3x^2 + 0x - 44$}
+
+{\small But we need $-10$, not $-44$!}
+\end{minipage}
+
+\vspace{0.1cm}
+\textbf{Quotient:} $\boxed{2x^3 - 4x^2 + 11x - 22}$ \hspace{0.2in} \textbf{Remainder:} $-10 - (-44) = \boxed{34}$
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+% --- YOU TRY ---
+\textbf{You Try:} $(3x^3 + 10x^2 + x - 6) \div (x + 2)$
+
+\vspace{0.1cm}
+\begin{minipage}[t]{0.55\textwidth}
+\centering
+\renewcommand{\arraystretch}{2.2}
+\begin{tabular}{|c||p{0.7in}|p{0.7in}|p{0.7in}|}
+\hline
+$\times$ & & & \\
+\hline\hline
+$x$ & & & \\
+\hline
+$+2$ & & & \\
+\hline
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+\vspace{0.3in}
+\textbf{Quotient:} \underline{\hspace{1.5in}}
+
+\vspace{0.2in}
+\textbf{Remainder:} \underline{\hspace{1.2in}}
+\end{minipage}
+
+\end{document}
